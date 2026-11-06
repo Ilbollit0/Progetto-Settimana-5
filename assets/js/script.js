@@ -47,9 +47,31 @@ form.addEventListener("submit", function (event) {
 // TEMA SCURO (click sulla luna)
 //
 const themeToggle = document.getElementById("theme-toggle");
+const themeIcon = themeToggle.querySelector("i");
 
 themeToggle.addEventListener("click", function () {
   document.body.classList.toggle("dark");
+
+  // luna in tema chiaro, sole in tema scuro
+  if (document.body.classList.contains("dark")) {
+    themeIcon.classList.replace("fa-moon", "fa-sun");
+  } else {
+    themeIcon.classList.replace("fa-sun", "fa-moon");
+  }
+});
+
+//
+// HEADER ALLO SCROLL
+//
+// dopo 100px l'header diventa verde con ombra (stile in .scrolled nel CSS)
+const header = document.getElementById("site-header");
+
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 100) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
 });
 
 //
