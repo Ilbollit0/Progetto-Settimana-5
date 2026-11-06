@@ -393,7 +393,7 @@ p {
   display: flex;
   gap: 24px;
   width: max-content;
-  padding: 8px 0;
+  padding: 8px 24px 8px 0; /* 24px a destra = un gap in più: il -50% torna preciso */
   animation: scroll-x 30s linear infinite;
 }
 
@@ -510,7 +510,7 @@ p {
   padding: 24px;
   border-radius: var(--radius);
   background-color: #fff;
-  color: var(--text);
+  color: #1a1a1a; /* fisso: la modale resta bianca anche in dark mode */
   transform: translate(-50%, -50%);
   animation: slideUp 0.4s ease both;
 }

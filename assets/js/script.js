@@ -42,3 +42,26 @@ form.addEventListener("submit", function (event) {
   // chiusura automatica dopo 2 secondi
   closeTimer = setTimeout(closeModal, 2000);
 });
+
+//
+// TEMA SCURO (click sulla luna)
+//
+const themeToggle = document.getElementById("theme-toggle");
+
+themeToggle.addEventListener("click", function () {
+  document.body.classList.toggle("dark");
+});
+
+//
+// CAROSELLO CONTINUO
+//
+// duplica le recensioni: con translateX(-50%) il secondo giro
+// prende il posto del primo e lo scorrimento non ha buchi
+const track = document.getElementById("carousel-track");
+const testimonials = track.querySelectorAll(".testimonial");
+
+testimonials.forEach(function (item) {
+  const copy = item.cloneNode(true);
+  copy.setAttribute("aria-hidden", "true"); // gli screen reader non le leggono due volte
+  track.appendChild(copy);
+});
